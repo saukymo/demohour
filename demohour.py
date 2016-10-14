@@ -1,21 +1,10 @@
-
 # coding: utf-8
-
-# In[107]:
 
 import urllib2
 from StringIO import StringIO
 from lxml import etree
 from lxml.html.soupparser import fromstring
 
-
-# In[108]:
-
-# user id for 北京东方嘉诚文化发展有限公司. type String.
-user_id = '1627742'
-
-
-# In[109]:
 
 def get_followers(user_id):
     url = "http://www.demohour.com/users/%s/followers" % user_id
@@ -24,9 +13,6 @@ def get_followers(user_id):
 def get_followed(user_id):
     url = "http://www.demohour.com/users/%s/followed" % user_id
     return get_user_list(url)
-
-
-# In[114]:
 
 def get_user_list(url):
     # fetch html file and decode with 'utf-8'
@@ -50,20 +36,15 @@ def get_user_list(url):
     return user_list
 
 
-# In[115]:
+if __name__ == "__main__":
+    # user id for 北京东方嘉诚文化发展有限公司. type String.
+    user_id = '1627742'
 
-print("followers:")
-followers_list = get_followers(user_id)
-print("\nfollowed:")
-followed_list = get_followed(user_id)
+    print("followers:")
+    followers_list = get_followers(user_id)
+    print("\nfollowed:")
+    followed_list = get_followed(user_id)
 
-
-# In[ ]:
-
-
-
-
-# In[ ]:
 
 
 
